@@ -95,6 +95,7 @@ class IntrospectHackerOne
 
     introspection_result = response.parsed_response
     schema = GraphQL::Schema.from_introspection introspection_result
+    p schema.to_definition
     IO.write('results/hackerone.graphql', schema.to_definition)
   end
 end
