@@ -1130,8 +1130,6 @@ type Cluster implements Node {
     last: Int
     order_by: WeaknessOrder = {direction: ASC, field: name}
     search: String = null
-    team_handle: String = null
-    team_weakness_state: [TeamWeaknessStates] = [enabled, disabled, hidden]
   ): ClusterWeaknessConnection
 }
 
@@ -2747,7 +2745,6 @@ type Report implements Node, ResourceInterface {
   singular_disclosure_allowed: Boolean
   singular_disclosure_disabled: Boolean
   stage: String
-  stale: Boolean
   state: String
   structured_scope: StructuredScope
   substate: String!
@@ -2815,7 +2812,6 @@ enum ReportFilterEnum {
   public
   reporter_is_active
   sla_violation
-  stale
   swag_awarded
   unassigned
 }
@@ -3806,7 +3802,6 @@ type Team implements Node, ResourceInterface {
     last: Int
     order_by: WeaknessOrder = {direction: ASC, field: name}
     search: String = null
-    team_weakness_state: [TeamWeaknessStates] = [enabled, disabled, hidden]
   ): TeamWeaknessConnection
   website: String
   whitelisted_hackers(
