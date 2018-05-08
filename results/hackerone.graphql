@@ -32,7 +32,7 @@ type AcknowledgeProgramHealthAcknowledgementPayload implements MutationResult {
 # A Activities::AgreedOnGoingPublic activity for a report
 type ActivitiesAgreedOnGoingPublic implements ActivityInterface, Node, ReportActivityInterface {
   _id: ID!
-  actor: ActorUnion!
+  actor: ActorUnion
   attachments: [Attachment]
   automated_response: Boolean
   created_at: DateTime!
@@ -50,7 +50,7 @@ type ActivitiesAgreedOnGoingPublic implements ActivityInterface, Node, ReportAct
 # A Activities::BountyAwarded activity for a report
 type ActivitiesBountyAwarded implements ActivityInterface, Node, ReportActivityInterface {
   _id: ID!
-  actor: ActorUnion!
+  actor: ActorUnion
   attachments: [Attachment]
   automated_response: Boolean
   bonus_amount: String
@@ -70,7 +70,7 @@ type ActivitiesBountyAwarded implements ActivityInterface, Node, ReportActivityI
 # A Activities::BountySuggested activity for a report
 type ActivitiesBountySuggested implements ActivityInterface, Node, ReportActivityInterface {
   _id: ID!
-  actor: ActorUnion!
+  actor: ActorUnion
   attachments: [Attachment]
   automated_response: Boolean
   bonus_amount: String
@@ -90,7 +90,7 @@ type ActivitiesBountySuggested implements ActivityInterface, Node, ReportActivit
 # A Activities::BugCloned activity for a report
 type ActivitiesBugCloned implements ActivityInterface, Node, ReportActivityInterface {
   _id: ID!
-  actor: ActorUnion!
+  actor: ActorUnion
   attachments: [Attachment]
   automated_response: Boolean
   created_at: DateTime!
@@ -109,7 +109,7 @@ type ActivitiesBugCloned implements ActivityInterface, Node, ReportActivityInter
 # A Activities::BugDuplicate activity for a report
 type ActivitiesBugDuplicate implements ActivityInterface, Node, ReportActivityInterface {
   _id: ID!
-  actor: ActorUnion!
+  actor: ActorUnion
   attachments: [Attachment]
   automated_response: Boolean
   created_at: DateTime!
@@ -128,7 +128,24 @@ type ActivitiesBugDuplicate implements ActivityInterface, Node, ReportActivityIn
 # A Activities::BugFiled activity for a report
 type ActivitiesBugFiled implements ActivityInterface, Node, ReportActivityInterface {
   _id: ID!
-  actor: ActorUnion!
+  actor: ActorUnion
+  attachments: [Attachment]
+  automated_response: Boolean
+  created_at: DateTime!
+  genius_execution_id: ID
+  i_can_edit: Boolean!
+  id: ID!
+  internal: Boolean
+  markdown_message: String
+  message: String
+  report: Report
+  updated_at: DateTime!
+}
+
+# A Activities::BugInactive activity for a report
+type ActivitiesBugInactive implements ActivityInterface, Node, ReportActivityInterface {
+  _id: ID!
+  actor: ActorUnion
   attachments: [Attachment]
   automated_response: Boolean
   created_at: DateTime!
@@ -145,7 +162,7 @@ type ActivitiesBugFiled implements ActivityInterface, Node, ReportActivityInterf
 # A Activities::BugInformative activity for a report
 type ActivitiesBugInformative implements ActivityInterface, Node, ReportActivityInterface {
   _id: ID!
-  actor: ActorUnion!
+  actor: ActorUnion
   attachments: [Attachment]
   automated_response: Boolean
   created_at: DateTime!
@@ -162,7 +179,7 @@ type ActivitiesBugInformative implements ActivityInterface, Node, ReportActivity
 # A Activities::BugNeedsMoreInfo activity for a report
 type ActivitiesBugNeedsMoreInfo implements ActivityInterface, Node, ReportActivityInterface {
   _id: ID!
-  actor: ActorUnion!
+  actor: ActorUnion
   attachments: [Attachment]
   automated_response: Boolean
   created_at: DateTime!
@@ -179,7 +196,7 @@ type ActivitiesBugNeedsMoreInfo implements ActivityInterface, Node, ReportActivi
 # A Activities::BugNew activity for a report
 type ActivitiesBugNew implements ActivityInterface, Node, ReportActivityInterface {
   _id: ID!
-  actor: ActorUnion!
+  actor: ActorUnion
   attachments: [Attachment]
   automated_response: Boolean
   created_at: DateTime!
@@ -196,7 +213,7 @@ type ActivitiesBugNew implements ActivityInterface, Node, ReportActivityInterfac
 # A Activities::BugNotApplicable activity for a report
 type ActivitiesBugNotApplicable implements ActivityInterface, Node, ReportActivityInterface {
   _id: ID!
-  actor: ActorUnion!
+  actor: ActorUnion
   attachments: [Attachment]
   automated_response: Boolean
   created_at: DateTime!
@@ -213,7 +230,7 @@ type ActivitiesBugNotApplicable implements ActivityInterface, Node, ReportActivi
 # A Activities::BugReopened activity for a report
 type ActivitiesBugReopened implements ActivityInterface, Node, ReportActivityInterface {
   _id: ID!
-  actor: ActorUnion!
+  actor: ActorUnion
   attachments: [Attachment]
   automated_response: Boolean
   created_at: DateTime!
@@ -230,7 +247,7 @@ type ActivitiesBugReopened implements ActivityInterface, Node, ReportActivityInt
 # A Activities::BugResolved activity for a report
 type ActivitiesBugResolved implements ActivityInterface, Node, ReportActivityInterface {
   _id: ID!
-  actor: ActorUnion!
+  actor: ActorUnion
   attachments: [Attachment]
   automated_response: Boolean
   created_at: DateTime!
@@ -247,7 +264,7 @@ type ActivitiesBugResolved implements ActivityInterface, Node, ReportActivityInt
 # A Activities::BugSpam activity for a report
 type ActivitiesBugSpam implements ActivityInterface, Node, ReportActivityInterface {
   _id: ID!
-  actor: ActorUnion!
+  actor: ActorUnion
   attachments: [Attachment]
   automated_response: Boolean
   created_at: DateTime!
@@ -264,7 +281,7 @@ type ActivitiesBugSpam implements ActivityInterface, Node, ReportActivityInterfa
 # A Activities::BugTriaged activity for a report
 type ActivitiesBugTriaged implements ActivityInterface, Node, ReportActivityInterface {
   _id: ID!
-  actor: ActorUnion!
+  actor: ActorUnion
   attachments: [Attachment]
   automated_response: Boolean
   created_at: DateTime!
@@ -281,7 +298,7 @@ type ActivitiesBugTriaged implements ActivityInterface, Node, ReportActivityInte
 # A Activities::ChangedScope activity for a report
 type ActivitiesChangedScope implements ActivityInterface, Node, ReportActivityInterface {
   _id: ID!
-  actor: ActorUnion!
+  actor: ActorUnion
   attachments: [Attachment]
   automated_response: Boolean
   created_at: DateTime!
@@ -300,7 +317,7 @@ type ActivitiesChangedScope implements ActivityInterface, Node, ReportActivityIn
 # A Activities::Comment activity for a report
 type ActivitiesComment implements ActivityInterface, Node, ReportActivityInterface {
   _id: ID!
-  actor: ActorUnion!
+  actor: ActorUnion
   attachments: [Attachment]
   automated_response: Boolean
   created_at: DateTime!
@@ -317,7 +334,7 @@ type ActivitiesComment implements ActivityInterface, Node, ReportActivityInterfa
 # A Activities::CommentsClosed activity for a report
 type ActivitiesCommentsClosed implements ActivityInterface, Node, ReportActivityInterface {
   _id: ID!
-  actor: ActorUnion!
+  actor: ActorUnion
   attachments: [Attachment]
   automated_response: Boolean
   created_at: DateTime!
@@ -334,7 +351,7 @@ type ActivitiesCommentsClosed implements ActivityInterface, Node, ReportActivity
 # A Activities::CveIdAdded activity for a report
 type ActivitiesCveIdAdded implements ActivityInterface, Node, ReportActivityInterface {
   _id: ID!
-  actor: ActorUnion!
+  actor: ActorUnion
   attachments: [Attachment]
   automated_response: Boolean
   created_at: DateTime!
@@ -352,7 +369,7 @@ type ActivitiesCveIdAdded implements ActivityInterface, Node, ReportActivityInte
 # A Activities::ExternalAdvisoryAdded activity for a report
 type ActivitiesExternalAdvisoryAdded implements ActivityInterface, Node, ReportActivityInterface {
   _id: ID!
-  actor: ActorUnion!
+  actor: ActorUnion
   attachments: [Attachment]
   automated_response: Boolean
   created_at: DateTime!
@@ -369,7 +386,7 @@ type ActivitiesExternalAdvisoryAdded implements ActivityInterface, Node, ReportA
 # A Activities::ExternalUserInvitationCancelled activity for a report
 type ActivitiesExternalUserInvitationCancelled implements ActivityInterface, Node, ReportActivityInterface {
   _id: ID!
-  actor: ActorUnion!
+  actor: ActorUnion
   attachments: [Attachment]
   automated_response: Boolean
   created_at: DateTime!
@@ -387,7 +404,7 @@ type ActivitiesExternalUserInvitationCancelled implements ActivityInterface, Nod
 # A Activities::ExternalUserInvited activity for a report
 type ActivitiesExternalUserInvited implements ActivityInterface, Node, ReportActivityInterface {
   _id: ID!
-  actor: ActorUnion!
+  actor: ActorUnion
   attachments: [Attachment]
   automated_response: Boolean
   created_at: DateTime!
@@ -405,7 +422,7 @@ type ActivitiesExternalUserInvited implements ActivityInterface, Node, ReportAct
 # A Activities::ExternalUserJoined activity for a report
 type ActivitiesExternalUserJoined implements ActivityInterface, Node, ReportActivityInterface {
   _id: ID!
-  actor: ActorUnion!
+  actor: ActorUnion
   attachments: [Attachment]
   automated_response: Boolean
   created_at: DateTime!
@@ -424,7 +441,7 @@ type ActivitiesExternalUserJoined implements ActivityInterface, Node, ReportActi
 # A Activities::ExternalUserRemoved activity for a report
 type ActivitiesExternalUserRemoved implements ActivityInterface, Node, ReportActivityInterface {
   _id: ID!
-  actor: ActorUnion!
+  actor: ActorUnion
   attachments: [Attachment]
   automated_response: Boolean
   created_at: DateTime!
@@ -442,7 +459,7 @@ type ActivitiesExternalUserRemoved implements ActivityInterface, Node, ReportAct
 # A Activities::GroupAssignedToBug activity for a report
 type ActivitiesGroupAssignedToBug implements ActivityInterface, Node, ReportActivityInterface {
   _id: ID!
-  actor: ActorUnion!
+  actor: ActorUnion
   assigned_group: TeamMemberGroup
   attachments: [Attachment]
   automated_response: Boolean
@@ -461,7 +478,7 @@ type ActivitiesGroupAssignedToBug implements ActivityInterface, Node, ReportActi
 # A Activities::HackerRequestedMediation activity for a report
 type ActivitiesHackerRequestedMediation implements ActivityInterface, Node, ReportActivityInterface {
   _id: ID!
-  actor: ActorUnion!
+  actor: ActorUnion
   attachments: [Attachment]
   automated_response: Boolean
   created_at: DateTime!
@@ -478,7 +495,7 @@ type ActivitiesHackerRequestedMediation implements ActivityInterface, Node, Repo
 # A Activities::ManuallyDisclosed activity for a report
 type ActivitiesManuallyDisclosed implements ActivityInterface, Node, ReportActivityInterface {
   _id: ID!
-  actor: ActorUnion!
+  actor: ActorUnion
   attachments: [Attachment]
   automated_response: Boolean
   created_at: DateTime!
@@ -495,7 +512,7 @@ type ActivitiesManuallyDisclosed implements ActivityInterface, Node, ReportActiv
 # A Activities::MediationRequested activity for a report
 type ActivitiesMediationRequested implements ActivityInterface, Node, ReportActivityInterface {
   _id: ID!
-  actor: ActorUnion!
+  actor: ActorUnion
   attachments: [Attachment]
   automated_response: Boolean
   created_at: DateTime!
@@ -512,7 +529,7 @@ type ActivitiesMediationRequested implements ActivityInterface, Node, ReportActi
 # An Activities::NobodyAssignedToBug activity for a report
 type ActivitiesNobodyAssignedToBug implements ActivityInterface, Node, ReportActivityInterface {
   _id: ID!
-  actor: ActorUnion!
+  actor: ActorUnion
   attachments: [Attachment]
   automated_response: Boolean
   created_at: DateTime!
@@ -529,7 +546,7 @@ type ActivitiesNobodyAssignedToBug implements ActivityInterface, Node, ReportAct
 # A Activities::NotEligibleForBounty activity for a report
 type ActivitiesNotEligibleForBounty implements ActivityInterface, Node, ReportActivityInterface {
   _id: ID!
-  actor: ActorUnion!
+  actor: ActorUnion
   attachments: [Attachment]
   automated_response: Boolean
   created_at: DateTime!
@@ -546,7 +563,7 @@ type ActivitiesNotEligibleForBounty implements ActivityInterface, Node, ReportAc
 # A Activities::ReassignedToTeam activity for a report
 type ActivitiesReassignedToTeam implements ActivityInterface, Node, ReportActivityInterface {
   _id: ID!
-  actor: ActorUnion!
+  actor: ActorUnion
   attachments: [Attachment]
   automated_response: Boolean
   created_at: DateTime!
@@ -563,7 +580,7 @@ type ActivitiesReassignedToTeam implements ActivityInterface, Node, ReportActivi
 # A Activities::ReferenceIdAdded activity for a report
 type ActivitiesReferenceIdAdded implements ActivityInterface, Node, ReportActivityInterface {
   _id: ID!
-  actor: ActorUnion!
+  actor: ActorUnion
   attachments: [Attachment]
   automated_response: Boolean
   created_at: DateTime!
@@ -582,7 +599,7 @@ type ActivitiesReferenceIdAdded implements ActivityInterface, Node, ReportActivi
 # A Activities::ReportBecamePublic activity for a report
 type ActivitiesReportBecamePublic implements ActivityInterface, Node, ReportActivityInterface {
   _id: ID!
-  actor: ActorUnion!
+  actor: ActorUnion
   attachments: [Attachment]
   automated_response: Boolean
   created_at: DateTime!
@@ -599,7 +616,7 @@ type ActivitiesReportBecamePublic implements ActivityInterface, Node, ReportActi
 # A Activities::ReportCollaboratorInvited activity for a report
 type ActivitiesReportCollaboratorInvited implements ActivityInterface, Node, ReportActivityInterface {
   _id: ID!
-  actor: ActorUnion!
+  actor: ActorUnion
   attachments: [Attachment]
   automated_response: Boolean
   created_at: DateTime!
@@ -616,7 +633,7 @@ type ActivitiesReportCollaboratorInvited implements ActivityInterface, Node, Rep
 # A Activities::ReportCollaboratorJoined activity for a report
 type ActivitiesReportCollaboratorJoined implements ActivityInterface, Node, ReportActivityInterface {
   _id: ID!
-  actor: ActorUnion!
+  actor: ActorUnion
   attachments: [Attachment]
   automated_response: Boolean
   created_at: DateTime!
@@ -633,7 +650,7 @@ type ActivitiesReportCollaboratorJoined implements ActivityInterface, Node, Repo
 # A Activities::ReportSeverityUpdated activity for a report
 type ActivitiesReportSeverityUpdated implements ActivityInterface, Node, ReportActivityInterface {
   _id: ID!
-  actor: ActorUnion!
+  actor: ActorUnion
   attachments: [Attachment]
   automated_response: Boolean
   created_at: DateTime!
@@ -650,7 +667,7 @@ type ActivitiesReportSeverityUpdated implements ActivityInterface, Node, ReportA
 # A Activities::ReportTitleUpdated activity for a report
 type ActivitiesReportTitleUpdated implements ActivityInterface, Node, ReportActivityInterface {
   _id: ID!
-  actor: ActorUnion!
+  actor: ActorUnion
   attachments: [Attachment]
   automated_response: Boolean
   created_at: DateTime!
@@ -669,7 +686,7 @@ type ActivitiesReportTitleUpdated implements ActivityInterface, Node, ReportActi
 # A Activities::ReportVulnerabilityTypesUpdated activity for a report
 type ActivitiesReportVulnerabilityTypesUpdated implements ActivityInterface, Node, ReportActivityInterface {
   _id: ID!
-  actor: ActorUnion!
+  actor: ActorUnion
   attachments: [Attachment]
   automated_response: Boolean
   created_at: DateTime!
@@ -688,7 +705,7 @@ type ActivitiesReportVulnerabilityTypesUpdated implements ActivityInterface, Nod
 # A Activities::SwagAwarded activity for a report
 type ActivitiesSwagAwarded implements ActivityInterface, Node, ReportActivityInterface {
   _id: ID!
-  actor: ActorUnion!
+  actor: ActorUnion
   attachments: [Attachment]
   automated_response: Boolean
   created_at: DateTime!
@@ -706,7 +723,7 @@ type ActivitiesSwagAwarded implements ActivityInterface, Node, ReportActivityInt
 # A Activities::TeamPublished activity for a team
 type ActivitiesTeamPublished implements ActivityInterface, Node {
   _id: ID!
-  actor: ActorUnion!
+  actor: ActorUnion
   created_at: DateTime!
   i_can_edit: Boolean!
   id: ID!
@@ -719,7 +736,7 @@ type ActivitiesTeamPublished implements ActivityInterface, Node {
 # A Activities::UserAssignedToBug activity for a report
 type ActivitiesUserAssignedToBug implements ActivityInterface, Node, ReportActivityInterface {
   _id: ID!
-  actor: ActorUnion!
+  actor: ActorUnion
   assigned_user: User!
   attachments: [Attachment]
   automated_response: Boolean
@@ -737,7 +754,7 @@ type ActivitiesUserAssignedToBug implements ActivityInterface, Node, ReportActiv
 # A Activities::UserBannedFromProgram activity for a report
 type ActivitiesUserBannedFromProgram implements ActivityInterface, Node, ReportActivityInterface {
   _id: ID!
-  actor: ActorUnion!
+  actor: ActorUnion
   attachments: [Attachment]
   automated_response: Boolean
   created_at: DateTime!
@@ -755,7 +772,7 @@ type ActivitiesUserBannedFromProgram implements ActivityInterface, Node, ReportA
 # A Activities::UserJoined activity for a user
 type ActivitiesUserJoined implements ActivityInterface, Node {
   _id: ID!
-  actor: ActorUnion!
+  actor: ActorUnion
   created_at: DateTime!
   i_can_edit: Boolean!
   id: ID!
@@ -779,7 +796,7 @@ type ActivityConnection {
 # A interface for the common fields on an HackerOne Activity
 interface ActivityInterface {
   _id: ID!
-  actor: ActorUnion!
+  actor: ActorUnion
   created_at: DateTime!
   i_can_edit: Boolean!
   internal: Boolean
@@ -807,6 +824,7 @@ enum ActivityTypes {
   BugCloned
   BugDuplicate
   BugFiled
+  BugInactive
   BugInformative
   BugNeedsMoreInfo
   BugNew
@@ -846,7 +864,7 @@ enum ActivityTypes {
 }
 
 # Activities can be of multiple types
-union ActivityUnion = ActivitiesAgreedOnGoingPublic | ActivitiesBountyAwarded | ActivitiesBountySuggested | ActivitiesBugCloned | ActivitiesBugDuplicate | ActivitiesBugFiled | ActivitiesBugInformative | ActivitiesBugNeedsMoreInfo | ActivitiesBugNew | ActivitiesBugNotApplicable | ActivitiesBugReopened | ActivitiesBugResolved | ActivitiesBugSpam | ActivitiesBugTriaged | ActivitiesChangedScope | ActivitiesComment | ActivitiesCommentsClosed | ActivitiesCveIdAdded | ActivitiesExternalAdvisoryAdded | ActivitiesExternalUserInvitationCancelled | ActivitiesExternalUserInvited | ActivitiesExternalUserJoined | ActivitiesExternalUserRemoved | ActivitiesGroupAssignedToBug | ActivitiesHackerRequestedMediation | ActivitiesManuallyDisclosed | ActivitiesMediationRequested | ActivitiesNobodyAssignedToBug | ActivitiesNotEligibleForBounty | ActivitiesReassignedToTeam | ActivitiesReferenceIdAdded | ActivitiesReportBecamePublic | ActivitiesReportCollaboratorInvited | ActivitiesReportCollaboratorJoined | ActivitiesReportSeverityUpdated | ActivitiesReportTitleUpdated | ActivitiesReportVulnerabilityTypesUpdated | ActivitiesSwagAwarded | ActivitiesTeamPublished | ActivitiesUserAssignedToBug | ActivitiesUserBannedFromProgram | ActivitiesUserJoined
+union ActivityUnion = ActivitiesAgreedOnGoingPublic | ActivitiesBountyAwarded | ActivitiesBountySuggested | ActivitiesBugCloned | ActivitiesBugDuplicate | ActivitiesBugFiled | ActivitiesBugInactive | ActivitiesBugInformative | ActivitiesBugNeedsMoreInfo | ActivitiesBugNew | ActivitiesBugNotApplicable | ActivitiesBugReopened | ActivitiesBugResolved | ActivitiesBugSpam | ActivitiesBugTriaged | ActivitiesChangedScope | ActivitiesComment | ActivitiesCommentsClosed | ActivitiesCveIdAdded | ActivitiesExternalAdvisoryAdded | ActivitiesExternalUserInvitationCancelled | ActivitiesExternalUserInvited | ActivitiesExternalUserJoined | ActivitiesExternalUserRemoved | ActivitiesGroupAssignedToBug | ActivitiesHackerRequestedMediation | ActivitiesManuallyDisclosed | ActivitiesMediationRequested | ActivitiesNobodyAssignedToBug | ActivitiesNotEligibleForBounty | ActivitiesReassignedToTeam | ActivitiesReferenceIdAdded | ActivitiesReportBecamePublic | ActivitiesReportCollaboratorInvited | ActivitiesReportCollaboratorJoined | ActivitiesReportSeverityUpdated | ActivitiesReportTitleUpdated | ActivitiesReportVulnerabilityTypesUpdated | ActivitiesSwagAwarded | ActivitiesTeamPublished | ActivitiesUserAssignedToBug | ActivitiesUserBannedFromProgram | ActivitiesUserJoined
 
 # An edge in a connection.
 type ActivityUnionEdge {
@@ -1233,11 +1251,16 @@ enum CommonResponseOrderField {
 
 input ConnectionFilter {
   and: ConnectionFilterLogicalOperator
+  handle: ConnectionFilterOperation
+  name: ConnectionFilterOperation
   or: ConnectionFilterLogicalOperator
   substate: ConnectionFilterOperation
+  team: ConnectionFilter
   team_id: ConnectionFilterOperation
   title: ConnectionFilterOperation
   vulnerability_information: ConnectionFilterOperation
+  weakness: ConnectionFilter
+  weakness_id: ConnectionFilterOperation
 }
 
 input ConnectionFilterLogicalOperator {
@@ -1364,6 +1387,31 @@ type CreateCurrencycloudBankTransferPayoutPreferencePayload implements MutationR
   was_successful: Boolean!
 }
 
+# Autogenerated input type of CreateCveRequest
+input CreateCveRequestInput {
+  # A unique identifier for the client performing the mutation.
+  clientMutationId: String
+  description: String!
+  product: String!
+  product_version: String!
+  references: [String]
+  report_id: Int
+  team_handle: String!
+  vulnerability_discovered_at: String!
+  weakness_id: Int!
+}
+
+# Autogenerated return type of CreateCveRequest
+type CreateCveRequestPayload implements MutationResult {
+  # A unique identifier for the client performing the mutation.
+  clientMutationId: String
+  cve_requests: CveRequestsConnectionType
+  errors(types: [ErrorTypeEnum]): ErrorConnection!
+  new_cve_request: CveRequestEdge
+  team: Team
+  was_successful: Boolean!
+}
+
 # Autogenerated input type of CreateJiraOauthUrl
 input CreateJiraOauthUrlInput {
   # A unique identifier for the client performing the mutation.
@@ -1475,11 +1523,12 @@ input CreateOrUpdateJiraIntegrationInput {
 }
 
 # Autogenerated return type of CreateOrUpdateJiraIntegration
-type CreateOrUpdateJiraIntegrationPayload {
+type CreateOrUpdateJiraIntegrationPayload implements MutationResult {
   # A unique identifier for the client performing the mutation.
   clientMutationId: String
-  errors: Hash
+  errors(types: [ErrorTypeEnum]): ErrorConnection!
   team: Team
+  was_successful: Boolean!
 }
 
 # Autogenerated input type of CreatePaypalPreference
@@ -1617,7 +1666,7 @@ type CreateTaxFormPayload implements MutationResult {
 
 # Autogenerated input type of CreateTrigger
 input CreateTriggerInput {
-  action_common_response_id: ID!
+  action_message: String!
   action_type: String!
 
   # A unique identifier for the client performing the mutation.
@@ -1700,6 +1749,54 @@ type CurrencycloudBankTransferPayoutPreferenceType implements Node, PayoutPrefer
   default: Boolean
   id: ID!
   name: String
+}
+
+# A request for a CVE
+type CveRequest implements Node {
+  created_at: DateTime
+  cve_identifier: String
+  description: String
+  id: ID!
+  latest_state_change_reason: String
+  owner: User!
+  product: String
+  product_version: String
+  references: [String]
+  report: Report
+  state: CveRequestStateEnum!
+  team: Team!
+  updated_at: DateTime
+  vulnerability_discovered_at: DateTime
+  weakness: Weakness
+}
+
+# An edge in a connection.
+type CveRequestEdge {
+  # A cursor for use in pagination.
+  cursor: String!
+
+  # The item at the end of the edge.
+  node: CveRequest
+}
+
+# States of a CVE Request
+enum CveRequestStateEnum {
+  cancelled
+  draft
+  hackerone_approved
+  mitre_approved
+  pending_hackerone_approval
+  pending_mitre_approval
+}
+
+# The connection type for CveRequest.
+type CveRequestsConnectionType {
+  # A list of edges.
+  edges: [CveRequestEdge]
+
+  # Information to aid in pagination.
+  pageInfo: PageInfo!
+  total_count: Int!
 }
 
 # Converts a date to iso8601
@@ -2351,6 +2448,7 @@ type Mutation {
   createBountySuggestion(input: CreateBountySuggestionInput!): CreateBountySuggestionPayload
   createCoinbasePayoutPreference(input: CreateCoinbasePayoutPreferenceInput!): CreateCoinbasePayoutPreferencePayload
   createCurrencycloudBankTransferPayoutPreference(input: CreateCurrencycloudBankTransferPayoutPreferenceInput!): CreateCurrencycloudBankTransferPayoutPreferencePayload
+  createCveRequest(input: CreateCveRequestInput!): CreateCveRequestPayload
   createJiraOauthUrl(input: CreateJiraOauthUrlInput!): CreateJiraOauthUrlPayload
   createJiraWebhookToken(input: CreateJiraWebhookTokenInput!): CreateJiraWebhookTokenPayload
   createLeaveProgramSurveyAnswer(input: CreateLeaveProgramSurveyAnswerInput!): CreateLeaveProgramSurveyAnswerPayload
@@ -2541,7 +2639,9 @@ type PostEdge {
 # Product Edition of a Team
 type ProductEdition {
   display_name: String!
+  hacker_invitations_enabled: Boolean!
   id: ID!
+  saas_deal: Boolean!
 }
 
 # Different possible profile picture sizes
@@ -2797,6 +2897,10 @@ type Report implements Node, ResourceInterface {
   latest_public_activity_of_team_at: DateTime
   mediation_requested_at: DateTime
   original_report: Report
+
+  # A post-submission trigger that notified the hacker after submission. This
+  # field is only present for reports filed after February 14, 2016.
+  post_submission_trigger_log_trigger: Trigger
   pre_submission_review_state: String
   reference: ID
   reference_link: String
@@ -2816,10 +2920,6 @@ type Report implements Node, ResourceInterface {
   team_member_agreed_on_going_public_at: DateTime
   title: String
   triaged_at: DateTime
-
-  # A pre-submission trigger that notified the hacker before submission. This
-  # field is only present for reports filed after February 14, 2016.
-  triggered_pre_submission_trigger: Trigger
   url: URI!
   vulnerability_information: String
   vulnerability_information_html: String
@@ -2924,6 +3024,13 @@ type ReporterConnection {
 # Represents a type that can be retrieved by a URL.
 interface ResourceInterface {
   url: URI!
+}
+
+# Possible response efficiency indicators
+enum ResponseEfficiencyIndicatorEnum {
+  failed
+  missed
+  ok
 }
 
 # A HackerOne session
@@ -3032,6 +3139,17 @@ enum SeveritySecurityRequirementEnum {
 enum SeverityUserInteractionEnum {
   none
   required
+}
+
+# Resolution SLA settings for a HackerOne team
+type SlaSetting {
+  _id: ID!
+  critical_severity_resolved_staleness_threshold: Int!
+  high_severity_resolved_staleness_threshold: Int!
+  id: ID!
+  low_severity_resolved_staleness_threshold: Int!
+  medium_severity_resolved_staleness_threshold: Int!
+  none_severity_resolved_staleness_threshold: Int!
 }
 
 # SLA snapshot of a Team
@@ -3482,11 +3600,14 @@ type Swag implements Node {
 
 # The connection type for Swag.
 type SwagConnection {
+  any: Boolean!
+
   # A list of edges.
   edges: [SwagEdge]
 
   # Information to aid in pagination.
   pageInfo: PageInfo!
+  total_count: Int!
 }
 
 # An edge in a connection.
@@ -3554,7 +3675,10 @@ type Team implements Node, ResourceInterface {
     # activities(updated_at_after: "2017-11-30 13:37:12 UTC")
     updated_at_after: String
   ): ActivityConnection
+  allow_all_hacker_invitations: Boolean
+  allow_email_and_automatic_invitations: Boolean
   automatic_invites: Boolean
+  awards_miles: Boolean
   base_bounty: Int
   bounty_awarded_staleness_threshold: Int
   bounty_time: Float
@@ -3589,6 +3713,20 @@ type Team implements Node, ResourceInterface {
   created_at: DateTime
   critical_submissions_enabled: Boolean
   currency: String
+  cve_requests(
+    # Returns the elements in the list that come after the specified global ID.
+    after: String
+
+    # Returns the elements in the list that come before the specified global ID.
+    before: String
+
+    # Returns the first _n_ elements from the list.
+    first: Int
+
+    # Returns the last _n_ elements from the list.
+    last: Int
+  ): CveRequestsConnectionType
+  external_program: ExternalProgram
   fancy_slack_integration: Boolean
   fancy_slack_integration_enabled: Boolean!
   first_response_time: Float
@@ -3605,9 +3743,9 @@ type Team implements Node, ResourceInterface {
   i_can_view_jira_integration: Boolean
   i_can_view_jira_webhook: Boolean
   i_can_view_phabricator_integration: Boolean
-  i_can_view_program_health: Boolean!
   i_can_view_program_health_redesign: Boolean!
   i_can_view_reports_resolved: Boolean
+  i_can_view_resolution_time_by_severity: Boolean
   i_can_view_response_efficiency_indicators: Boolean
   i_can_view_weaknesses: Boolean
   i_cannot_create_jira_webhook_reasons: [TeamCannotCreateJiraWebhookReasons]!
@@ -3632,6 +3770,7 @@ type Team implements Node, ResourceInterface {
   jira_integration: JiraIntegration
   jira_oauth: JiraOauth
   jira_webhook: JiraWebhook
+  launch_link: String
   maximum_number_of_team_mediation_requests: Float
   name: String!
   new_staleness_threshold: Int
@@ -3720,10 +3859,17 @@ type Team implements Node, ResourceInterface {
   ): ReportConnection
   resolution_time: Float
   resolved_staleness_threshold: Int
+  response_efficiency_indicator: ResponseEfficiencyIndicatorEnum
+  response_efficiency_percentage: Int
+  review_rejected_at: DateTime
   review_requested_at: DateTime
+  settings_disabled: Boolean
+  settings_link: String
+  setup_guide_completed: Boolean
   sla_failed_count: Int
   sla_failed_count_redacted: Int
   sla_missed_count: Int
+  sla_setting: SlaSetting
   sla_snapshots(
     # Returns the elements in the list that come after the specified global ID.
     after: String
@@ -3800,9 +3946,7 @@ type Team implements Node, ResourceInterface {
     search: String = null
   ): StructuredScopesConnection
   submission_state: SubmissionStateEnum!
-  target_signal: Float
-  team_display_options: TeamDisplayOptions
-  team_member_groups(
+  swag(
     # Returns the elements in the list that come after the specified global ID.
     after: String
 
@@ -3814,7 +3958,10 @@ type Team implements Node, ResourceInterface {
 
     # Returns the last _n_ elements from the list.
     last: Int
-  ): TeamMemberGroupConnection
+  ): SwagConnection
+  target_signal: Float
+  team_display_options: TeamDisplayOptions
+  team_member_groups: [TeamMemberGroup]
   team_members(
     # Returns the elements in the list that come after the specified global ID.
     after: String
@@ -3831,6 +3978,7 @@ type Team implements Node, ResourceInterface {
   ): TeamMemberConnection
   triage_active: Boolean
   triage_bounty_management: String
+  triage_enabled: Boolean
   triage_note: String
   triage_note_html: String
   triage_time: Float
@@ -3848,6 +3996,8 @@ type Team implements Node, ResourceInterface {
 
     # Returns the last _n_ elements from the list.
     last: Int
+    order_by: TriggersOrder = {direction: DESC, field: created_at}
+    search: String = null
   ): TriggerConnection
   twitter_handle: String
   updated_at: DateTime
@@ -3881,7 +4031,7 @@ type Team implements Node, ResourceInterface {
 
     # Returns the last _n_ elements from the list.
     last: Int
-  ): ReporterConnection
+  ): WhitelistedHackerConnection
 }
 
 # Different reasons why a team cannot create a jira webhook
@@ -4019,26 +4169,11 @@ type TeamMemberGroup implements Node {
 
   # ID of the object.
   id: ID!
+  immutable: Boolean!
+  key: String
   name: String!
   permissions: [String]!
-}
-
-# The connection type for TeamMemberGroup.
-type TeamMemberGroupConnection {
-  # A list of edges.
-  edges: [TeamMemberGroupEdge]
-
-  # Information to aid in pagination.
-  pageInfo: PageInfo!
-}
-
-# An edge in a connection.
-type TeamMemberGroupEdge {
-  # A cursor for use in pagination.
-  cursor: String!
-
-  # The item at the end of the edge.
-  node: TeamMemberGroup
+  team_members: [TeamMember]
 }
 
 input TeamMemberOrder {
@@ -4129,9 +4264,9 @@ enum TeamWeaknessStates {
 # Trigger
 type Trigger implements Node, ResourceInterface {
   _id: ID!
-  action_common_response: CommonResponse!
-  action_message: String
+  action_message: String!
   action_type: String!
+  created_at: DateTime!
   expression_operator: String!
   expressions(
     # Returns the elements in the list that come after the specified global ID.
@@ -4147,6 +4282,7 @@ type Trigger implements Node, ResourceInterface {
     last: Int
   ): ExpressionConnection!
   id: ID!
+  seeded: Boolean!
   team: Team!
   title: String
   trigger_action_logs(
@@ -4207,6 +4343,16 @@ type TriggerEdge {
 
   # The item at the end of the edge.
   node: Trigger
+}
+
+# Fields on which a collection of triggers can be ordered
+enum TriggerOrderField {
+  created_at
+}
+
+input TriggersOrder {
+  direction: OrderDirection!
+  field: TriggerOrderField!
 }
 
 # Tshirt size
@@ -4514,10 +4660,16 @@ input UpdateTeamResponseSlaInput {
 
   # A unique identifier for the client performing the mutation.
   clientMutationId: String
+  critical_severity_resolved_staleness_threshold: Int
+  high_severity_resolved_staleness_threshold: Int
+  low_severity_resolved_staleness_threshold: Int
+  medium_severity_resolved_staleness_threshold: Int
   new_staleness_threshold: Int
+  none_severity_resolved_staleness_threshold: Int
   resolved_staleness_threshold: Int
   team_handle: String!
   triaged_staleness_threshold: Int
+  use_advanced_settings: Boolean
 }
 
 # Autogenerated return type of UpdateTeamResponseSla
@@ -4616,7 +4768,7 @@ type UpdateTeamWeaknessPayload {
 
 # Autogenerated input type of UpdateTrigger
 input UpdateTriggerInput {
-  action_common_response_id: ID!
+  action_message: String!
   action_type: String!
 
   # A unique identifier for the client performing the mutation.
@@ -4690,6 +4842,7 @@ type UpdateUserPasswordPayload {
 type User implements Node, ResourceInterface {
   _id: ID!
   address: Address
+  anc_triager: Boolean
   authentication_service: AuthenticationServiceEnum!
   badges(
     # Returns the elements in the list that come after the specified global ID.
@@ -4736,6 +4889,7 @@ type User implements Node, ResourceInterface {
     last: Int
   ): UserConnection
   email: String
+  hackerone_triager: Boolean
   i_can_update_username: Boolean
   id: ID!
   impact: Float
@@ -4952,4 +5106,14 @@ input WeaknessOrder {
 # Fields on which a collection of weaknesses can be ordered
 enum WeaknessOrderField {
   name
+}
+
+# The connection type for User.
+type WhitelistedHackerConnection {
+  # A list of edges.
+  edges: [UserEdge]
+
+  # Information to aid in pagination.
+  pageInfo: PageInfo!
+  total_count: Int!
 }
